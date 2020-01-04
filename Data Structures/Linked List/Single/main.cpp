@@ -13,10 +13,11 @@ int main()
     List.pushFront(13);
     List.printList();
     cout << "***************" << endl;
-    int num = List.popEnd(); 
-    cout << "Popped out at the end data : " << num << endl;
-    List.printList();
-    cout << "****************" << endl;
+    // int num = List.popEnd(); 
+    List.reverseList();
+    cout << "Reversed." << endl;
+    List.addNode(162);
+    List.reverseList();
     // List.deleteNode(6);
     // List.deleteNode(2);
     // List.printList();

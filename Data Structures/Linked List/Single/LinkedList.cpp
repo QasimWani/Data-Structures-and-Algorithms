@@ -138,3 +138,18 @@ void LinkedList::deleteList()
     }
     
 }
+
+void LinkedList::reverseList()
+{
+    temp = NULL;
+    current = head;
+    head = NULL;
+    while(current != NULL)
+    {
+        temp = current->next;
+        current->next = head;
+        head = current;
+        current = temp;  
+    }
+    printList();    
+}

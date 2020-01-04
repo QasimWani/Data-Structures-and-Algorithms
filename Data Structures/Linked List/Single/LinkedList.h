@@ -24,5 +24,6 @@ public:
     int popEnd(); // Returns node data pointing to the tail. Removes the node. changes tail pointer to previous node. O(n) runtime.
     bool isEmpty(); //Returns true if LinkedList is empty, i.e. head points to nullPtr. O(1) run-time.
     void deleteList(); //Deletes the entire List from memory. Utilizes popFront(). O(n) runtime complexity.
+    void reverseList(); //Reverses linked list.
 };
 #endif
