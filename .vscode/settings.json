@@ -1,0 +1,8 @@
+{
+    "git.ignoreLimitWarning": true,
+    "code-runner.runInTerminal": true,
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp"
+    },
+}
