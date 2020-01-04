@@ -66,3 +66,75 @@ void LinkedList::printList()
         current = current->next;
     }
 }
+
+void LinkedList::pushFront(int data)
+{
+    temp = head;
+    nodePtr pf = new node;
+    pf->data = data;
+    pf->next = temp;
+    head = pf;    
+}
+
+int LinkedList::popFront()
+{
+    temp = head;
+    nodePtr top = temp;
+    if(isEmpty())
+    {
+        cout << "List is Empty. Nothing to pop" << endl;
+        return -1;
+    }
+    int data = top->data;
+    temp = top->next;
+    head = temp;
+    delete top;
+    
+    return data;
+}
+
+int LinkedList::popEnd()
+{
+    if(isEmpty())
+    {
+        cout << "List is empty. Nothing to pop at rail." << endl;
+        return -1;
+    }
+    nodePtr del = head;
+
+    while(del->next != NULL)
+    {
+        temp = del;
+        del = del->next;
+    }
+    int data = del->data;
+    temp->next = NULL;
+    delete del;
+    return data;
+}
+
+bool LinkedList::isEmpty()
+{
+    if(head == NULL)
+    {
+        return true;
+    }
+    return false;
+}
+
+void LinkedList::deleteList()
+{
+    if(!isEmpty())
+    {
+        while(!isEmpty())
+        {
+            popFront();
+        }
+        cout << "List cleared." << endl;
+    }
+    else
+    {
+        cout << "List already Empty." << endl;
+    }
+    
+}
