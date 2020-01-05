@@ -1,6 +1,6 @@
 
-#ifndef mains
-#define mains
+#ifndef Linked_H
+#define Linked_H
 class LinkedList
 {
 private:
