@@ -15,11 +15,12 @@ private:
 
 public:
     Tree();
-    void newNode(nodePtr position, int data);
+    void newNode(int data);
     nodePtr insertOne(nodePtr position, int data);
     bool isEmpty();
     int getNode(nodePtr element);
-    void printTree(nodePtr root);
+    void printTree();
+    
 };
 
 #endif

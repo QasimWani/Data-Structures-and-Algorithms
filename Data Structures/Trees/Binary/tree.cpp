@@ -9,33 +9,35 @@ Tree::Tree()
     temp = NULL;
     current = NULL;
 }
-Tree::nodePtr Tree::insertOne(nodePtr rootN, int data)
-{
-    nodePtr n = new node;
-    n->data = data;
-    n->left = n->right = NULL;
-    return n;
-}
-void Tree::newNode(nodePtr rootPtr, int data)
+
+void Tree::newNode(int data)
 {
     
-    nodePtr n = new node;
-    if(isEmpty())
-    {
-        root = n;
-    }
-    else
-    {
-        if(n->data <= root->data)
-        {
-            n->left = insertOne(root, data);
-        }
-        else
-        {
-            n->right = insertOne(root, data);
-        }
-        
-    }
+    // nodePtr n = new node;
+    // n->data = data;
+    // n->left = n->right = NULL;
+
+    // if(isEmpty())
+    // {
+    //     root = n;
+    // }
+    // else
+    // {
+    //     current = root;
+    //     while(current == NULL)
+    //     {
+    //         if(n->data <= current->data)
+    //         {
+    //             current->left = n;
+    //             current = n;
+    //         }
+    //         else
+    //         {
+    //             current->right = n;
+    //             current = n;
+    //         }
+    //     }
+    // }
     
 }
 
@@ -57,27 +59,17 @@ int Tree::getNode(nodePtr element)
     return -1;
 }
 
-void Tree::printTree(nodePtr rootPtr)
+void Tree::printTree()
 {
-    current = rootPtr;
-    if(isEmpty())
-    {
-        cout << "Tree Empty." << endl;
-    }
-    else
-    {
-        cout << current->data << endl;
-        if(current->left != NULL)
-        {
-            current = current->left;
-            printTree(current);
-        }
-        else
-        {
-            current = current->right;
-            printTree(current);
-        }
-        
-    }
-    
+    // current = temp;
+    // if(isEmpty())
+    // {
+    //     cout << "Tree Empty." << endl;
+    // }
+    // else
+    // {
+    //     cout << current->data << endl;
+    //     current = current->left;
+    //     cout << current->data << endl;
+    // }
 }
