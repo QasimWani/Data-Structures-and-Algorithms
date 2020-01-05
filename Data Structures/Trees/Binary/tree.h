@@ -1,7 +1,7 @@
 #ifndef Tree_H
 #define Tree_H
 template<typename T>
-class tree
+class Tree
 {
 private:
     typedef struct node
@@ -14,7 +14,7 @@ private:
     nodePtr temp;
     nodePtr current;
 public:
-    tree();
+    Tree();
     void addChild(T node);
 };
 
