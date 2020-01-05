@@ -1,6 +1,8 @@
 #ifndef Tree_H
 #define Tree_H
-template<typename T>
+
+template<class T>
+
 class Tree
 {
 private:
@@ -13,9 +15,14 @@ private:
     nodePtr root;
     nodePtr temp;
     nodePtr current;
+
 public:
     Tree();
-    void addChild(T node);
+    
+    void addChild(T data, node position);
+    
+    bool isEmpty();
+    T getNode(node element);
 };
 
 #endif
