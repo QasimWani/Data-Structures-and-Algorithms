@@ -1,14 +1,11 @@
 #ifndef Tree_H
 #define Tree_H
-
-template<class T>
-
 class Tree
 {
 private:
     typedef struct node
     {
-        T data;
+        int data;
         node* left;
         node* right;
     }* nodePtr;
@@ -18,11 +15,11 @@ private:
 
 public:
     Tree();
-    
-    void addChild(T data, node position);
-    
+    void newNode(nodePtr position, int data);
+    nodePtr insertOne(nodePtr position, int data);
     bool isEmpty();
-    T getNode(node element);
+    int getNode(nodePtr element);
+    void printTree(nodePtr root);
 };
 
 #endif

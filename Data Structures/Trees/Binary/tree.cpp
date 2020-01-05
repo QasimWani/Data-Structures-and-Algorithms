@@ -1,25 +1,45 @@
 #include <iostream>
 #include <cstdlib>
-
 #include "Tree.h"
 using namespace std;
 
-template<class T>
-Tree<T>::Tree()
+Tree::Tree()
 {
     root = NULL;
     temp = NULL;
     current = NULL;
 }
-
-template<class T>
-void Tree<T>::addChild(T data, node position)
+Tree::nodePtr Tree::insertOne(nodePtr rootN, int data)
 {
+    nodePtr n = new node;
+    n->data = data;
+    n->left = n->right = NULL;
+    return n;
+}
+void Tree::newNode(nodePtr rootPtr, int data)
+{
+    
+    nodePtr n = new node;
+    if(isEmpty())
+    {
+        root = n;
+    }
+    else
+    {
+        if(n->data <= root->data)
+        {
+            n->left = insertOne(root, data);
+        }
+        else
+        {
+            n->right = insertOne(root, data);
+        }
+        
+    }
     
 }
 
-template<class T>
-bool Tree<T>::isEmpty()
+bool Tree::isEmpty()
 {
     if(root == NULL)
     {
@@ -28,12 +48,36 @@ bool Tree<T>::isEmpty()
     return false;
 }
 
-template<class T>
-T Tree<T>::getNode(node element)
+int Tree::getNode(nodePtr element)
 {
     if(!isEmpty())
     {
-        
+        //Traversal Methods.
     }
     return -1;
+}
+
+void Tree::printTree(nodePtr rootPtr)
+{
+    current = rootPtr;
+    if(isEmpty())
+    {
+        cout << "Tree Empty." << endl;
+    }
+    else
+    {
+        cout << current->data << endl;
+        if(current->left != NULL)
+        {
+            current = current->left;
+            printTree(current);
+        }
+        else
+        {
+            current = current->right;
+            printTree(current);
+        }
+        
+    }
+    
 }
