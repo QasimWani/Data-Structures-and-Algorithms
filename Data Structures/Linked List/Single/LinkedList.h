@@ -25,5 +25,6 @@ public:
     bool isEmpty(); //Returns true if LinkedList is empty, i.e. head points to nullPtr. O(1) run-time.
     void deleteList(); //Deletes the entire List from memory. Utilizes popFront(). O(n) runtime complexity.
     void reverseList(); //Reverses linked list.
+    int seeStack(); //Returns the value in ASCII of the stack (popFront() without deleting the head).
 };
 #endif

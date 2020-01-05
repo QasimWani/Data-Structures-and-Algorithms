@@ -93,6 +93,11 @@ int LinkedList::popFront()
     return data;
 }
 
+int LinkedList::seeStack()
+{
+    return head->data;
+}
+
 int LinkedList::popEnd()
 {
     if(isEmpty())

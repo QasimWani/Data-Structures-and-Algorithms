@@ -3,6 +3,7 @@
     "code-runner.runInTerminal": true,
     "files.associations": {
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cstdlib": "cpp"
     },
 }
