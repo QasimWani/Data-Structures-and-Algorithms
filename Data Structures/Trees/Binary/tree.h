@@ -19,7 +19,6 @@ public:
     bool isEmpty();
     nodePtr getNode(int data);
     bool printTree(nodePtr tree_structure, int data);
-    
 };
 
 #endif

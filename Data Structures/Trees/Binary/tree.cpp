@@ -67,3 +67,4 @@ bool Tree::printTree(nodePtr rootPtr, int data)
         return printTree(rootPtr->right, data);
     }
 }
+
