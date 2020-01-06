@@ -15,4 +15,12 @@ Tutorials on Data Structures and Algorithms
     <li>
         Queue <a target="_blank" href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Queue">API</a>
     </li>
+    <li>
+        Tree
+        <ol>
+            <li>
+                Binary Search Trees <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Trees/Binary">API<a>
+            </li>
+        </ol>
+    </li>
 </ol>
