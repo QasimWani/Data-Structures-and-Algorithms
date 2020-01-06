@@ -10,35 +10,31 @@ Tree::Tree()
     current = NULL;
 }
 
-void Tree::newNode(int data)
+Tree::nodePtr Tree::newNode(nodePtr root, int data)
 {
+    if(root == NULL)
+    {
+        root = getNode(data);
+        return root;
+    }
+    if(data <= root->data)
+    {
+        root->left = newNode(root->left, data);
+    }
+    else
+    {
+        root->right = newNode(root->right, data);
+    }
+    return root;
     
-    // nodePtr n = new node;
-    // n->data = data;
-    // n->left = n->right = NULL;
+}
 
-    // if(isEmpty())
-    // {
-    //     root = n;
-    // }
-    // else
-    // {
-    //     current = root;
-    //     while(current == NULL)
-    //     {
-    //         if(n->data <= current->data)
-    //         {
-    //             current->left = n;
-    //             current = n;
-    //         }
-    //         else
-    //         {
-    //             current->right = n;
-    //             current = n;
-    //         }
-    //     }
-    // }
-    
+Tree::nodePtr Tree::getNode(int data)
+{
+   nodePtr newNode = new node();
+   newNode->data = data;
+   newNode->left = newNode->right = NULL;
+   return newNode;
 }
 
 bool Tree::isEmpty()
@@ -50,26 +46,24 @@ bool Tree::isEmpty()
     return false;
 }
 
-int Tree::getNode(nodePtr element)
-{
-    if(!isEmpty())
-    {
-        //Traversal Methods.
-    }
-    return -1;
-}
 
-void Tree::printTree()
+
+bool Tree::printTree(nodePtr rootPtr, int data)
 {
-    // current = temp;
-    // if(isEmpty())
-    // {
-    //     cout << "Tree Empty." << endl;
-    // }
-    // else
-    // {
-    //     cout << current->data << endl;
-    //     current = current->left;
-    //     cout << current->data << endl;
-    // }
+    if(rootPtr == NULL)
+    {
+        return false;
+    }
+    else if(data == rootPtr->data)
+    {
+        return true;
+    }
+    else if(data <= rootPtr->data)
+    {
+        return printTree(rootPtr->left, data);
+    } 
+    else
+    {
+        return printTree(rootPtr->right, data);
+    }
 }

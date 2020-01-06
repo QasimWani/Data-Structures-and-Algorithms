@@ -9,17 +9,16 @@ private:
         node* left;
         node* right;
     }* nodePtr;
+    
+public:
     nodePtr root;
     nodePtr temp;
     nodePtr current;
-
-public:
     Tree();
-    void newNode(int data);
-    nodePtr insertOne(nodePtr position, int data);
+    nodePtr newNode(nodePtr rootNode, int data);
     bool isEmpty();
-    int getNode(nodePtr element);
-    void printTree();
+    nodePtr getNode(int data);
+    bool printTree(nodePtr tree_structure, int data);
     
 };
 
