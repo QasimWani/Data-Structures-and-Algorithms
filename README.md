@@ -27,7 +27,7 @@ Tutorials on Data Structures and Algorithms
             Arrays
                 <ol>
                     <li>
-                        Dynamic <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Arrays/Dynamic">API</a>
+                        Vector <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Arrays/Dynamic">API</a>
                     </li>
                 </ol>
             </li>
