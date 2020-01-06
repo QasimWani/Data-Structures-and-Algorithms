@@ -4,8 +4,6 @@
 #include <string>
 using namespace std;
 
-const int values[] {40,41,91,93,123,125}; //( )    [ ]    { }
-const int size_v = 6;
 int main()
 {
     string data;
