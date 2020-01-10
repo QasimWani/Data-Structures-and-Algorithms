@@ -3,22 +3,22 @@ using namespace std;
 
 int main()
 {
-    bool checker;
     Heap heap;
-    
-    checker = heap.isEmpty();
-    cout << checker << endl;
-    
-    heap.insert(40);
-    
-    checker = heap.isEmpty();
-    cout << checker << endl;
-    
-    heap.insert(90);
-    heap.insert(10);
-    heap.insert(21);
 
+    int data;
+
+    while (data != -1)
+    {
+        cout << "\nEnter data (-1 to Quit) : ";
+        cin >> data;
+        if(data != -1)
+        {
+            heap.insert(data);
+        }
+    }
+    cout << "Printing Data...\n" << endl;
     heap.printHeap();
-    
+    // int max = heap.extractMax();
+    // cout << max << endl;
     return 0;
 }
