@@ -2,15 +2,19 @@
 #define Heap_H
 /**
  * Binary Structurally Balanced Heap.
+ * Priority Queue.
 */
 class Heap
 {
 private:
     int * H; // array
-    int max_size; //maximum possible size of *H.
+    int * temp; //temporary array
     int current_size; //latest accessible element of heap array H.
     int getParent(int index); //returns parent of element # index.
     int * getSiblings(int index); // returns at most 2 siblings corresponding to index.
+    int * sort(int * arr, int current_size, bool flag);
+    int flag;
+    std::vector<int> arr;
 public:
     Heap();
     ~Heap();
@@ -21,6 +25,7 @@ public:
     int * getNodeInformation(int index);
     void shiftDown(int data, int index); //<--
     void shiftUp(int data, int index); //<--
+    void printHeap();
 };
 
 #endif
