@@ -19,12 +19,10 @@ public:
     Heap();
     ~Heap();
     int extractMax();
-    void insert(int data); //<--
+    void insert(int data);
     bool isEmpty();
-    void remove(int data); //<--
+    void remove(int index); //<--
     int * getNodeInformation(int index);
-    void shiftDown(int data, int index); //<--
-    void shiftUp(int data, int index); //<--
     void printHeap();
 };
 

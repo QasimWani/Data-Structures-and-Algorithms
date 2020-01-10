@@ -100,10 +100,8 @@ int Heap::extractMax()
 {
     int front = arr.front();
     arr.erase(arr.begin());
-    temp = H;
-    temp++;
-    H = temp;
-    delete[] temp;
+    H = &*arr.begin();
+    H = sort(H, current_size, false);
     return front;
 }
 
@@ -113,7 +111,6 @@ int * Heap::sort(int * arr, int curr_size, bool type_order)
     {
         return nullptr;
     }
-
     int size_temp = curr_size;
     int * siblings = getSiblings(size_temp);
     int num_parent = arr[size_temp];
@@ -163,4 +160,19 @@ int * Heap::sort(int * arr, int curr_size, bool type_order)
         sort(arr, size_temp, type_order);
     }
     return arr;
+}
+
+void Heap::remove(int index)
+{
+    int front = arr.front();
+    if (index < current_size)
+    {
+        arr.erase(arr.begin()+index);
+        H = &*arr.begin();
+        H = sort(H, current_size, false);
+    }
+    else
+    {
+        cout << "Index out of bounds." << endl;
+    }
 }
