@@ -21,6 +21,9 @@ Tutorials on Data Structures and Algorithms
             <li>
                 Binary Search Trees <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Trees/Binary">API<a>
             </li>
+            <li>
+                Heap <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Trees/Heap">API<a>
+            </li>
         </ol>
     </li>
             <li>
