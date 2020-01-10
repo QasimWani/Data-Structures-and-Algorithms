@@ -137,21 +137,28 @@ int * Heap::sort(int * arr, int curr_size, bool type_order)
     }
     else
     {
-        if(!type_order)
-        {
-            size_temp--;
-        }
-        else
+        /*
+         * 2x1 Multiplexer.
+         */
+        if(type_order)
         {
             size_temp *= 2;
         }
-        if(flag > 0 && !type_order)
+        else
         {
-            while (flag != 0)
+            if(flag == 0)
             {
-                size_temp /= 2;
-                flag--;
+                size_temp--;
             }
+            else
+            {
+                while (flag != 0)
+                {
+                    size_temp /= 2;
+                    flag--;
+                }
+            }
+            
         }
         sort(arr, size_temp, type_order);
     }
