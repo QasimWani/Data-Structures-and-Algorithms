@@ -33,8 +33,7 @@ int Heap::getParent(int index)
     {
         return 0;
     }
-    int d = index/2;
-    d = floor(d);
+    int d = floor(index/2);
     return H[d];
 }
 
