@@ -94,7 +94,8 @@ int Heap::extractMax()
     int front = H[1];
     return front;
 }
-
+//O(n) run-time
+//Reduced from O(n*log(n))
 int * Heap::sort(int curr_size)
 {
     if(curr_size < 1)
@@ -145,7 +146,7 @@ int * Heap::sort(int curr_size)
     }
     return H;
 }
-
+//O(n) run-time
 void Heap::remove(int index)
 {
     if (index < current_size)
