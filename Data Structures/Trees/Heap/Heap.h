@@ -23,7 +23,7 @@ public:
     int extractMax();
     void insert(int data);
     bool isEmpty();
-    void remove(int index); //<--
+    void remove(int index);
     int * getNodeInformation(int index);
     void printHeap();
 };
