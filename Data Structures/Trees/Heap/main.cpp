@@ -18,7 +18,19 @@ int main()
     }
     cout << "Printing Data...\n" << endl;
     heap.printHeap();
-    // int max = heap.extractMax();
-    // cout << max << endl;
+    int max = heap.extractMax();
+    cout << "Heap Maximum element : " << max << endl;
+    data = 0;
+    while (data != -1)
+    {
+        cout << "\n Delete index (-1 to Quit) : ";
+        cin >> data;
+        if(data != -1)
+        {
+            heap.remove(data);
+        }
+    }
+    cout << "Printing Data...\n" << endl;
+    heap.printHeap();
     return 0;
 }

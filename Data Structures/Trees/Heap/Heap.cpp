@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Heap.h"
 #include <vector>
-#include <cmath>
+#include <math.h>
 using namespace std;
 
 
@@ -29,11 +29,13 @@ bool Heap::isEmpty()
 
 int Heap::getParent(int index)
 {
-    if(isEmpty())
+    if(index > current_size)
     {
-        return -1;
+        return 0;
     }
-    return (H[index]/2);
+    int d = index/2;
+    d = floor(d);
+    return H[d];
 }
 
 int * Heap::getSiblings(int index)
@@ -56,7 +58,7 @@ int * Heap::getNodeInformation(int index)
 {
     int parent = getParent(index);
     int * siblings = getSiblings(index);
-    int * information;
+    int * information = new int[3];
     information[0] = parent;
     if(siblings != nullptr)
     {
@@ -71,7 +73,6 @@ void Heap::insert(int data)
     arr->push_back(data);
     H = &*arr->begin();
     current_size++;
-    // H = sort(H, current_size);
 }
 
 void Heap::printHeap()
@@ -87,10 +88,11 @@ void Heap::printHeap()
 
 int Heap::extractMax()
 {
-    int front = arr->front();
-    arr->erase(arr->begin());
-    H = &*arr->begin();
-    H = sort(current_size);
+    if(current_size == 1)
+    {
+        return -1;
+    }
+    int front = H[1];
     return front;
 }
 
@@ -147,13 +149,18 @@ int * Heap::sort(int curr_size)
 
 void Heap::remove(int index)
 {
-    int front = arr->front();
     if (index < current_size)
     {
-        arr->erase(arr->begin()+index);
-        H = &*arr->begin();
-        H = sort(current_size);
+        arr = new vector<int>;
+        for (int i = 0; i < current_size; i++)
+        {
+            if(i != index)
+            {
+                arr->push_back(H[i]);
+            }
+        }
         current_size--;
+        H = &*arr->begin();
     }
     else
     {
