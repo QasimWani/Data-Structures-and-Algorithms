@@ -38,11 +38,8 @@ Tutorials on Data Structures and Algorithms
             Hash
                 <ol>
                     <li>
-                        Phone Book <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Hash/Phone Book">API</a>
-                    </li>
-                    <li>
-                        String Substring Search <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Hash/String Search">API</a>
-                    </li>
+                        Phone Book <a href="https://github.com/QasimWani/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Hash">API</a>
+                    </li>                   
                 </ol>
             </li>
 </ol>
