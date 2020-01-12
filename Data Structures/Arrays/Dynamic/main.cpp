@@ -9,6 +9,7 @@ int main()
     int size;
     
     DynamicArray Vector;
+    
     int quit;
     do
     {
