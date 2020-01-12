@@ -26,9 +26,7 @@ int main()
     }
     
     cout << "\nPrinting Name Based Hash Table\n" << endl;
-    t1 = clock();
     phone->printNumHash();
-    t2 = clock();
     
     cout << "\nPrinting Number Based Hash Table\n" << endl;
 
@@ -40,11 +38,13 @@ int main()
     phone->findByName(contactName, true);
     cout << "Find One Contact by Number: ";
     cin >> number;
+
+    t1 = clock();
     phone->findByNumber(number, true);
+    t2 = clock();
 
     diff = ((float)t2-(float)t1);
     cout<< "\n\nTime Difference : " << diff << "\n" << endl;
 
-    
     return 0;
 }
