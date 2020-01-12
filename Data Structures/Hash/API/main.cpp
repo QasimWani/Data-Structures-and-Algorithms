@@ -10,6 +10,8 @@ int main()
     Hash * phone = new Hash();
     long long number;
     string contactName;
+    clock_t t1,t2;
+    float diff;
     while (number != -1)
     {
         cout << "\nEnter Phone Number : ";
@@ -24,8 +26,10 @@ int main()
     }
     
     cout << "\nPrinting Name Based Hash Table\n" << endl;
-    
+    t1 = clock();
     phone->printNumHash();
+    t2 = clock();
+    
     cout << "\nPrinting Number Based Hash Table\n" << endl;
 
     phone->printNameHash();
@@ -37,5 +41,10 @@ int main()
     cout << "Find One Contact by Number: ";
     cin >> number;
     phone->findByNumber(number, true);
+
+    diff = ((float)t2-(float)t1);
+    cout<< "\n\nTime Difference : " << diff << "\n" << endl;
+
+    
     return 0;
 }
