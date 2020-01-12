@@ -25,8 +25,8 @@ private:
     int get_str_Hash(string data, int X);//Hash function for type String.
 public:
     Hash();
-    contactPtr findByNumber(long long data);
-    contactPtr findByName(string data);
+    contactPtr findByNumber(long long data, bool state);
+    contactPtr findByName(string data, bool state);
     void addHash(long long number, string name);
     void printNumHash();
     void printNameHash();

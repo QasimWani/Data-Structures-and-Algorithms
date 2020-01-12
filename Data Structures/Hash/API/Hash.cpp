@@ -35,26 +35,23 @@ int Hash::get_str_Hash(string data, int X)
 
 void Hash::removeHashedElement(long long number, string name)
 {
-    temp = findByNumber(number);
-    if(temp != NULL)
+    if(findByNumber(number, false) != NULL && findByName(name, false) != NULL)
     {
         int hashNum = get_int_Hash(number);
         int hashName = get_str_Hash(name, 31);
-
-        numHash[hashNum].remove(temp);
-        temp = findByName(name);
-        nameHash[hashName].remove(temp);
+        numHash[hashNum].remove(findByNumber(number, false));
+        nameHash[hashName].remove(findByName(name, false));
     }
     else
     {
-        cout << "Contact, " << name << ", does not exist." << endl;
+        cout << "Contact, \"" << name << "\"; Phone : \"" << number << "\" does not exist." << endl;
     }
     
 }
 
 void Hash::addHash(long long num, string name)
 {
-    if(findByNumber(num) == NULL)
+    if(findByNumber(num, false) == NULL)
     {
         int hashNum = get_int_Hash(num);
         int hashName = get_str_Hash(name, 31);
@@ -74,42 +71,64 @@ void Hash::addHash(long long num, string name)
     
 }
 
-Hash:: contactPtr Hash::findByNumber(long long data)
+Hash:: contactPtr Hash::findByNumber(long long data, bool state)
 {
     int hash = get_int_Hash(data);
-
     if(numHash[hash].empty())
     {
+        if (state)
+        {
+            cout << "\nNumber does not exist in directory." << endl;
+        }
         return NULL;
     }
-    contactPtr ptr = *numHash[hash].begin();
-    while (ptr->number != data)
+    contactPtr ptr = NULL;
+    for (list<contactPtr>::iterator i = numHash[hash].begin(); i != numHash[hash].end(); i++)
     {
-        temp = ptr;
-        ptr++;
+        temp = contactPtr(*i);
+        if (temp->number == data)
+        {
+            ptr = temp;
+            break;
+        }
     }
-    return temp;
+    if (state)
+    {
+        cout << "\nName : \"" << temp->contact << "\"\tNumber : " << temp->number << endl;
+    }
+    return ptr;
 }
 
-Hash:: contactPtr Hash::findByName(string data)
+Hash:: contactPtr Hash::findByName(string data, bool state)
 {
     int hash = get_str_Hash(data, 31);
 
     if(nameHash[hash].empty())
     {
+        if (state)
+        {
+            cout << "\nName does not exist in directory." << endl;
+        }
         return NULL;
     }
-    contactPtr ptr = new contact;
-    temp = new contact;
-    temp = *numHash[hash].begin();
-
-    while (temp->contact != data)
+    
+    contactPtr ptr = NULL;
+    
+    for (list<contactPtr>::iterator i = nameHash[hash].begin(); i != nameHash[hash].end(); ++i)
     {
-        ptr = temp;
-        temp++;
+        temp = contactPtr(*i);
+        if (temp->contact == data)
+        {
+            ptr = temp;
+            break;
+        }    
     }
-
-    return ptr;
+    if (state)
+    {
+        cout << "\nName : \"" << temp->contact << "\"\tNumber : " << temp->number << endl;
+    }
+    
+    return temp;
 }
 
 void Hash::printNameHash()
@@ -118,12 +137,10 @@ void Hash::printNameHash()
     {
         if (!nameHash[i].empty())
         {
-            contactPtr records = *nameHash[i].begin();
-            for (int j = 0; j < nameHash[i].size(); j++)
+            for (list<contactPtr>::iterator j = nameHash[i].begin(); j != nameHash[i].end(); ++j)
             {
-                cout << i << ". " << records->contact << "\t" << records->number << endl;
-                records++;
-            }           
+                cout << i << ". " << contactPtr(*j)->contact << "\t" << contactPtr(*j)->number << endl;
+            }        
         }
         
     }
@@ -136,13 +153,10 @@ void Hash::printNumHash()
     {
         if (!numHash[i].empty())
         {
-            contactPtr records = *numHash[i].begin();
-            for (int j = 0; j < numHash[i].size(); j++)
+            for (list<contactPtr>::iterator j = numHash[i].begin(); j != numHash[i].end(); ++j)
             {
-                cout << i << ". " << records->contact << "\t" << records->number << endl;
-                records++;
-            }      
-            
+                cout << i << ". " << contactPtr(*j)->contact << "\t" << contactPtr(*j)->number << endl;
+            }    
         }
         
     }
