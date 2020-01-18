@@ -41,6 +41,7 @@
         "xtr1common": "cpp",
         "algorithm": "cpp",
         "array": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "list": "cpp"
     },
 }
