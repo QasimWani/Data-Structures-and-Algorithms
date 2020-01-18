@@ -1,5 +1,5 @@
 # Data-Structures-and-Algorithms
-Tutorials on Data Structures and Algorithms
+My Tutorials on Data Structures and Algorithms.
 #### Data Structures
 <ol>
 <li>
